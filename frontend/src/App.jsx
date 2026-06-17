@@ -69,8 +69,6 @@ export default function App() {
       </header>
 
       <main className="main">
-        <section className="card form-card">
-          <h2>Add student</h2>
         <Stats />
         <section className="card form-card">
           <h2>Add student</h2>

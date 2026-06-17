@@ -38,9 +38,6 @@ services:
       - backend
     restart: unless-stopped
 
-  frontend:
-    # TODO: you will need to add to this
-
   automark:
     build: ./automark
     depends_on:
