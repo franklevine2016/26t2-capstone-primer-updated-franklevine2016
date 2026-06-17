@@ -23,6 +23,11 @@ def get_students():
         return jsonify(students), 200
     except Exception:
         return jsonify({"error": "Fail to fetch students"}), 404
+    return jsonify([
+        {'course': 'COMP1531', 'id': 1, 'mark': 85, 'name': 'Alice Zhang'},
+        {'course': 'COMP1531', 'id': 2, 'mark': 72, 'name': 'Bob Smith'}
+    ]), 200
+
 
 @app.route("/students", methods=["POST"])
 def create_student():
@@ -44,6 +49,9 @@ def create_student():
         return jsonify(students), 200
     except Exception:
         return jsonify({"error": "Fail to create student"}), 404
+    student_data = request.json
+
+    pass
 
 
 @app.route("/students/<int:student_id>", methods=["PUT"])
@@ -71,6 +79,7 @@ def update_student(student_id):
         return jsonify(updated), 200
     except Exception:
         return jsonify({"error": "Failed to update student"}), 404
+    pass  # replace with your implementation
 
 
 @app.route("/students/<int:student_id>", methods=["DELETE"])
@@ -87,6 +96,7 @@ def delete_student(student_id):
         return jsonify(result), 200
     except Exception:
         return jsonify({"error": "Failed to delete student"}), 404
+    pass  # replace with your implementation
 
 
 @app.route("/stats")
@@ -119,6 +129,7 @@ def get_stats():
         return jsonify(stats_data), 200
     except Exception:
         return jsonify({"error": "Failed to get stats"}), 404
+    pass  # replace with your implementation
 
 
 @app.route("/")
